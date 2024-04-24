@@ -4,27 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="150acfd9-2a0b-4594-876f-a25f9b700192" name="Changes" comment="init of class attributes">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/GameController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exceptions/InvalidMoveException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/BotDifficultyLevel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Bot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BotDifficultyLevel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CellState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/CellState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PlayerType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/PlayerType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Symbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Symbol.java" afterDir="false" />
+    <list default="true" id="150acfd9-2a0b-4594-876f-a25f9b700192" name="Changes" comment="mvc setup and code refactor">
+      <change beforePath="$PROJECT_DIR$/src/models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +59,7 @@
       <updated>1713895819267</updated>
       <workItem from="1713895820553" duration="1577000" />
       <workItem from="1713934309632" duration="5628000" />
-      <workItem from="1713978173522" duration="1930000" />
+      <workItem from="1713978173522" duration="2258000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -96,7 +77,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713897305825</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="mvc setup and code refactor">
+      <option name="closed" value="true" />
+      <created>1713982663349</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1713982663349</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,6 +94,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="init of class attributes" />
-    <option name="LAST_COMMIT_MESSAGE" value="init of class attributes" />
+    <MESSAGE value="mvc setup and code refactor" />
+    <option name="LAST_COMMIT_MESSAGE" value="mvc setup and code refactor" />
   </component>
 </project>

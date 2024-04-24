@@ -20,13 +20,6 @@ public class Game {
         this.winner = null;
         this.nextPlayerIndex = 0;
     }
-    public Game() {
-        this.board = new Board(0);
-        this.players = new ArrayList<>();
-        this.winner = null;
-        this.moves = new ArrayList<>();
-        this.gameState = GameState.IN_PROGRESS;
-    }
 
     public Board getBoard() {
         return board;
