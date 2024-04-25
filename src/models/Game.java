@@ -1,24 +1,29 @@
 package models;
 
 import exceptions.InvalidMoveException;
+import models.*;
+import strategies.WinningAlgo;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Game {
     private Board board;
     private List<Player> players;
-    private Player winner;
     private List<Move> moves;
     private GameState gameState;
-    private  int nextPlayerIndex ;
+    private Player winner;
+    private int nextPlayerMoveIndex;
+    private WinningAlgo winningAlgorithm;
 
-    public Game(int size, List<Player> players) {
-        this.board = new Board(size);
+    public Game(int dimension, List<Player> players) {
+        this.board = new Board(dimension);
         this.players = players;
         this.moves = new ArrayList<>();
         this.gameState = GameState.IN_PROGRESS;
         this.winner = null;
-        this.nextPlayerIndex = 0;
+        this.nextPlayerMoveIndex = 0;
+        this.winningAlgorithm = new WinningAlgo();
     }
 
     public Board getBoard() {
@@ -37,14 +42,6 @@ public class Game {
         this.players = players;
     }
 
-    public Player getWinner() {
-        return winner;
-    }
-
-    public void setWinner(Player winner) {
-        this.winner = winner;
-    }
-
     public List<Move> getMoves() {
         return moves;
     }
@@ -61,24 +58,49 @@ public class Game {
         this.gameState = gameState;
     }
 
-    public int getNextPlayerIndex() {
-        return nextPlayerIndex;
+    public Player getWinner() {
+        return winner;
     }
 
-    public void setNextPlayerIndex(int nextPlayerIndex) {
-        this.nextPlayerIndex = nextPlayerIndex;
+    public void setWinner(Player winner) {
+        this.winner = winner;
     }
 
-    public void printBoard(Game game) {
+    public int getNextPlayerMoveIndex() {
+        return nextPlayerMoveIndex;
+    }
+
+    public void setNextPlayerMoveIndex(int nextPlayerMoveIndex) {
+        this.nextPlayerMoveIndex = nextPlayerMoveIndex;
+    }
+
+    public void printBoard() {
         this.board.printBoard();
     }
 
-    public void makeMove(Game game) throws InvalidMoveException {
-        Player currentPlayer = players.get(nextPlayerIndex);
+    private boolean validateMove(Move move) {
+        int row = move.getCell().getRow();
+        int col = move.getCell().getCol();
+
+        if (row < 0 || row >= board.getSize() || col < 0  || col >= board.getSize()) {
+            return false;
+        }
+
+        return board.getBoard().get(row).get(col).getCellState().equals(CellState.EMPTY);
+    }
+
+    public void makeMove() throws InvalidMoveException {
+        Player currentPlayer = players.get(nextPlayerMoveIndex);
+
+        System.out.println("It is " + currentPlayer.getName() + "'s move.");
+
+        //Move that currentPlayer wants to make
         Move move = currentPlayer.makeMove(board);
-        //check if the move is valid
-        if(!validateMove(move)){
-            throw new InvalidMoveException("Invalid Move by" + currentPlayer.getName());
+
+        //Game will validate the move before executing.
+        if (!validateMove(move)) {
+            //throw an exception
+            throw new InvalidMoveException("Invalid move made by " + currentPlayer.getName());
         }
 
         int row = move.getCell().getRow();
@@ -89,14 +111,14 @@ public class Game {
         cellToChange.setCellState(CellState.FILLED);
 
         Move finalMove = new Move(cellToChange, currentPlayer);
-    }
-    private boolean validateMove(Move move) {
-        int row = move.getCell().getRow();
-        int col = move.getCell().getCol();
+        moves.add(finalMove);
+        nextPlayerMoveIndex = (nextPlayerMoveIndex + 1) % players.size();
 
-        if (row < 0 || row >= board.getSize() || col < 0 || col >= board.getSize()) {
-            return false;
+        if (winningAlgorithm.checkWinner(board, finalMove)) {
+            gameState = GameState.ENDED;
+            winner = currentPlayer;
+        } else if (moves.size()==board.getSize()*board.getSize()) {
+            gameState = GameState.DRAW;
         }
-        return true;
     }
 }

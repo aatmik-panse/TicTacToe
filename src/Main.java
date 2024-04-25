@@ -1,7 +1,6 @@
 import controllers.GameController;
 import exceptions.InvalidMoveException;
 import models.*;
-
 import java.util.List;
 import java.util.Scanner;
 
@@ -16,22 +15,24 @@ public class Main {
         System.out.println("Enter the size of the board");
         int size = 3;
         List<Player> playerNames = List.of(
-                new Player("Player 1",new Symbol('*'),HUMAN ),new Bot("Bot 1",new Symbol('o'), BOT, BotDifficultyLevel.EASY));
+                new Player("Player 1",new Symbol('*'),HUMAN ),
+                new Player("Player 2",new Symbol('o'),HUMAN )
+        );
         GameController gameController = new GameController();
         Game game = gameController.startGame(size, playerNames);
 
         while (game.getGameState().equals(GameState.IN_PROGRESS)) {
-            //1. print the board.
+            //print the board
             gameController.printBoard(game);
-
-            //2. Player's turn
             gameController.makeMove(game);
         }
 
         if (!gameController.checkGameStatus(game).equals(GameState.ENDED)) {
             game.setGameState(GameState.DRAW);
+            gameController.printBoard(game);
             System.out.println("Game DRAW");
-        } else {
+        }
+        else {
             gameController.printBoard(game);
             System.out.println("Player " + gameController.getWinner(game).getName() + " is the winner");
         }

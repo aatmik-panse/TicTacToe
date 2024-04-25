@@ -17,7 +17,7 @@ public class GameController {
     }
 
     public void makeMove(Game game) throws InvalidMoveException {
-        game.makeMove(game);
+        game.makeMove();
     }
 
     public GameState checkGameStatus(Game game) {
@@ -29,7 +29,7 @@ public class GameController {
     }
 
     public int getNextPlayerIndex(Game game) {
-        return game.getNextPlayerIndex();
+        return game.getNextPlayerMoveIndex();
     }
 
     public void printBoard(Game game) {

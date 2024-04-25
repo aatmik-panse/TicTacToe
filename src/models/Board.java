@@ -6,6 +6,7 @@ public class Board {
     private int size;
     private List<List<Cell>> board;
     public Board(int size) {
+        this.size = size;
         board = new ArrayList<>();
         for (int i = 0; i < size ; i++) {
             board.add(new ArrayList<>());
