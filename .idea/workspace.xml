@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="150acfd9-2a0b-4594-876f-a25f9b700192" name="Changes" comment="mvc setup and code refactor 2">
-      <change afterPath="$PROJECT_DIR$/src/strategies/WinningAlgo.java" afterDir="false" />
+    <list default="true" id="150acfd9-2a0b-4594-876f-a25f9b700192" name="Changes" comment="logic implemented">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +60,7 @@
       <updated>1713895819267</updated>
       <workItem from="1713895820553" duration="1577000" />
       <workItem from="1713934309632" duration="5628000" />
-      <workItem from="1713978173522" duration="6931000" />
+      <workItem from="1713978173522" duration="7793000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <option name="closed" value="true" />
@@ -98,7 +94,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713983264544</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="logic implemented">
+      <option name="closed" value="true" />
+      <created>1714021225650</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1714021225650</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,7 +113,8 @@
     <MESSAGE value="init of class attributes" />
     <MESSAGE value="mvc setup and code refactor" />
     <MESSAGE value="mvc setup and code refactor 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="mvc setup and code refactor 2" />
+    <MESSAGE value="logic implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="logic implemented" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -9,15 +9,48 @@ import static models.PlayerType.HUMAN;
 
 public class Main {
     public static void main(String[] args) throws InvalidMoveException {
-        System.out.println("Game Started!");
+        System.out.println("2 Player TicTacToe Game Started!");
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the size of the board");
-        int size = 3;
+
+        System.out.println("Enter Player 1 name: ");
+        String player1 = scanner.nextLine();
+        System.out.println("Enter Player 2 name: ");
+        String player2 = scanner.nextLine();
+
+        System.out.println("Enter "+player1+"'s symbol: ");
+        char symbol1 = scanner.next().charAt(0);
+        System.out.println("Enter "+player2+"'s symbol: ");
+        char symbol2 = scanner.next().charAt(0);
+
+        System.out.println("Enter "+player1+"'s type (HUMAN/BOT): ");
+        String playerType1 = scanner.next();
+        System.out.println("Enter "+player2+"'s type (HUMAN/BOT): ");
+        String playerType2 = scanner.next();
+
+        Player playerOne;
+        Player playerTwo;
+
+        if(playerType1.equals("HUMAN")){
+            playerOne = new Player(player1, new Symbol(symbol1), HUMAN);
+        }
+        else{
+            playerOne = new Bot(player1, new Symbol(symbol1), BOT, BotDifficultyLevel.EASY);
+        }
+        if(playerType2.equals("HUMAN")){
+            playerTwo = new Player(player2, new Symbol(symbol2), HUMAN);
+        }
+        else{
+            playerTwo = new Bot(player2, new Symbol(symbol2), BOT, BotDifficultyLevel.EASY);
+        }
+
+
         List<Player> playerNames = List.of(
-                new Player("Player 1",new Symbol('*'),HUMAN ),
-                new Player("Player 2",new Symbol('o'),HUMAN )
+                playerOne,playerTwo
         );
+
+
+        int size = 3;
         GameController gameController = new GameController();
         Game game = gameController.startGame(size, playerNames);
 
